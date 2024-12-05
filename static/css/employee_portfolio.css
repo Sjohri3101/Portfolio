@@ -1,0 +1,9 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 65, 141, 0.142);
+}
+.employeeform{
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px grey;
+}

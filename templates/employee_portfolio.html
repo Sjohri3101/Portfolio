@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}PORTFOLIO{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/employee_portfolio.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 mb-3 bg-dark p-2 mt-5 employeeform">
+        <div class="p-1 text-warning-emphasis bg-primary-subtle border border-primary-subtle rounded-3 fs-1 text-center">
+            <strong>SEARCH PORTFOLIO</strong>
+        </div>
+        <label class="col-form-label col-form-label-sm mt-4 text-light fs-5" for="inputSmall">Employee ID</label>
+        <br>
+        <input class="form-control" type="text" placeholder="Enter Valid Employee ID" id="inputSmall">
+        <br>
+        <div class="text-center">
+            <a href="{% url 'display_employee_portfolio' %}"><button type="submit" class="btn btn-success">Submit</button></a>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+
+
+{% endblock %}

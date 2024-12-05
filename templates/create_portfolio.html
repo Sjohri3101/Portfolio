@@ -1,0 +1,676 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}PORTFOLIO{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/create_portfolio.css' %}">
+<link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="p-3 text-warning-emphasis bg-primary-subtle border border-primary-subtle rounded-3 fs-1">
+    CREATE PORTFOLIO
+</div>
+<section class="basic_details">
+    <span class="text-danger">* Marked compulsory to be filled </span>
+    <div class="personal_details">
+        <div class="p1">
+            <table>
+                <tr>
+                    <td>Employee's Name <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Employee Name" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Job Position <span class="text-danger">*</span></td>
+                    <td>
+                        <select class="form-select form-select-sm" name="job_position" id="job_position">
+                            <option value="">Select Job Position</option>
+                            <option value="developer">Developer</option>
+                            <option value="designer">Designer</option>
+                            <option value="manager">Manager</option>
+                            <option value="analyst">Analyst</option>
+                            <option value="hr">HR</option>
+                            <option value="sales">Sales</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="support">Support</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="p2">
+            <div class="position-relative">
+                <img src="{% static 'img/profile_image.png' %}" alt="Profile Image" width="150" height="150" class="img-fluid">
+                
+                <!-- Hidden file input -->
+                <input class="form-control position-absolute" type="file" id="formFile" style="top: 0; left: 0; width: 150px; height: 150px; opacity: 0; cursor: pointer;">
+            
+                <!-- Upload Icon wrapped in a label -->
+                <label for="formFile" class="position-absolute" style="top: 50%; left: 30%; transform: translate(-50%, -50%); cursor: pointer;">
+                    <i class="fas fa-upload" style="font-size: 50px; color: white;"></i>
+                </label>
+            </div>
+        </div>
+        <div class="p3">
+            <form action="">
+                <table>
+                    <tr>
+                        <td>Work Mobile</td>
+                        <td>
+                            <input class="form-control form-control-sm" type="text" placeholder="Enter Employee Mobile Number" id="inputSmall">
+                        </td>
+                        <td>Department <span class="text-danger">*</span></td>
+                        <td>
+                            <select class="form-select form-select-sm" id="department" name="department">
+                                <option value="">Select Department</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Human Resources">Human Resources</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Engineering">Engineering</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Work Phone</td>
+                        <td>
+                            <input class="form-control form-control-sm" type="text" placeholder="Enter Employee Phone Number" id="inputSmall">
+                        </td>
+                        <td>Job Position <span class="text-danger">*</span></td>
+                        <td>
+                            <select class="form-select form-select-sm" id="exampleSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                              </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Work Email <span class="text-danger">*</span></td>
+                        <td>
+                            <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      
+                        </td>
+                        <td>Manager <span class="text-danger">*</span></td>
+                        <td>
+                            <select class="form-select form-select-sm" id="manager" name="manager">
+                                <option value="">Select Manager</option>
+                                <option value="john_doe">John Doe</option>
+                                <option value="jane_smith">Jane Smith</option>
+                                <option value="alex_jones">Alex Jones</option>
+                                <option value="emily_brown">Emily Brown</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Coach 
+                            <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-title="This top tooltip is themed via CSS variables.">
+                                ?
+                            </button>
+                        </td>
+                        <td>
+                            <select class="form-select form-select-sm" id="coach" name="coach">
+                                <option value="">Select Coach</option>
+                                <option value="coach1">Coach 1</option>
+                                <option value="coach2">Coach 2</option>
+                                <option value="coach3">Coach 3</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="tabs">
+    <div class="tab active" onclick="showTab('tab1')">Resume</div>
+    <div class="tab" onclick="showTab('tab2')">Work Information</div>
+    <div class="tab" onclick="showTab('tab3')">Private Information</div>
+    <div class="tab" onclick="showTab('tab4')">HR Settings</div>
+</div>
+
+<div id="tab1" class="tab-content show">
+    <div class="tab1">
+        <div class="tab11">
+            <h6>Resume <span class="text-danger">*</span></h6>
+            <button type="button" class="btn btn-secondary">Upload Resume</button>
+        </div>
+        <div class="tab12">
+            <h6>Skills <span class="text-danger">*</span></h6>
+            <button type="button" class="btn btn-secondary">+</button>
+        </div>
+    </div>
+</div>
+<div id="tab2" class="tab-content">
+    <div class="tab2">
+        <h6>LOCATION</h6>
+        <table>
+            <tr>
+                <td>Work Address <span class="text-danger">*</span></td>
+                <td><input class="form-control form-control-sm" type="text" placeholder="Enter Work Address" id="inputSmall"></td>
+            </tr>
+            <tr>
+                <td>Work Location <span class="text-danger">*</span></td>
+                <td>
+                    <select class="form-select form-select-sm" id="location" name="location">
+                    <option value="">Select Location in Delhi</option>
+                    <option value="connaught_place">Connaught Place</option>
+                    <option value="karol_bag">Karol Bagh</option>
+                    <option value="chandni_chowk">Chandni Chowk</option>
+                    <option value="greater_kailash">Greater Kailash</option>
+                    <option value="hauz_khas">Hauz Khas</option>
+                    <option value="janpath">Janpath</option>
+                    <option value="lajpat_nagar">Lajpat Nagar</option>
+                    <option value="nehru_place">Nehru Place</option>
+                    <option value="paharganj">Paharganj</option>
+                    <option value="saket">Saket</option>
+                    <option value="south_extension">South Extension</option>
+                    <option value="vasant_kunj">Vasant Kunj</option>
+                    <option value="rohini">Rohini</option>
+                    <option value="dwarka">Dwarka</option>
+                    <option value="mayur_vihar">Mayur Vihar</option>
+                    <option value="sarojini_nagar">Sarojini Nagar</option>
+                    <option value="greater_noida">Greater Noida</option>
+                    <!-- Add more options as needed -->
+                </select>
+                </td>
+            </tr>
+        </table>
+        <h6>APPROVERS</h6>
+        <table>
+            <tr>
+                <td>Expense
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td><input class="form-control form-control-sm" type="text" placeholder="Enter Expense" id="inputSmall"></td>
+            </tr>
+            <tr>
+                <td>Time Off <span class="text-danger">*</span>
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td><input class="form-control form-control-sm" type="text" placeholder="Enter Time Off" id="inputSmall"></td>
+            </tr>
+        </table>
+        <h6>SCHEDULE</h6>
+        <table>
+            <tr>
+                <td>Working Hours <span class="text-danger">*</span></td>
+                <td><input type="number" class="form-control" name="number_of_dependents" min="0" value="0"></td>
+            </tr>
+            <tr>
+                <td>Timezone <span class="text-danger">*</span>
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td><select class="form-select form-select-sm" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select></td>
+            </tr>
+        </table>
+        <h6>PLANNING</h6>
+        <table>
+            <tr>
+                <td>Roles
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td><input class="form-control form-control-sm" type="text" placeholder="Enter Role" id="inputSmall"></td>
+            </tr>
+            <tr>
+                <td>Default Role
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td><input class="form-control form-control-sm" type="text" placeholder="Enter Default Role" id="inputSmall"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="tab3" class="tab-content">
+    <div class="tab3">
+        <div class="tab31">
+            <h6>PRIVATE CONTACT</h6>
+            <table>
+                <tr>
+                    <td>Address <span class="text-danger">*</span>
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Address" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Email <span class="text-danger">*</span></td>
+                    <td>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Personal Email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone <span class="text-danger">*</span></td>
+                    <td><input type="Phone" class="form-control" id="exampleInputEmail1" placeholder="Enter Personal Contact Number"></td>
+                </tr>
+                <tr>
+                    <td>Language <span class="text-danger">*</span>
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm" id="language" name="language">
+                            <option value="">Select Language</option>
+                            <option value="english">English</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="french">French</option>
+                            <option value="german">German</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="arabic">Arabic</option>
+                            <option value="portuguese">Portuguese</option>
+                            <option value="russian">Russian</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="punjabi">Punjabi</option>
+                            <option value="urdu">Urdu</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="telugu">Telugu</option>
+                            <option value="kannada">Kannada</option>
+                            <option value="malayalam">Malayalam</option>
+                            <option value="marathi">Marathi</option>
+                            <option value="gujarati">Gujarati</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Home-Work Distance <span class="text-danger">*</span></td>
+                    <td><input type="number" class="form-control" name="number_of_dependents" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Private Car Plate
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Private Car Number" id="inputSmall"></td>
+                </tr>
+            </table>
+            <h6>EDUCATION</h6>
+            <table>
+                <tr>
+                    <td>Certificate Level <span class="text-danger">*</span></td>
+                    <td>
+                        <select class="form-select form-select-sm" id="certificate_level" name="certificate_level">
+                            <option value="">Select Highest Certificate Level</option>
+                            <option value="high_school">High School</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="associate_degree">Associate Degree</option>
+                            <option value="bachelor_degree">Bachelor's Degree</option>
+                            <option value="master_degree">Master's Degree</option>
+                            <option value="doctoral_degree">Doctoral Degree</option>
+                            <option value="professional_certification">Professional Certification</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Field of Study <span class="text-danger">*</span></td>
+                    <td>
+                        <select class="form-select form-select-sm" id="field_of_study" name="field_of_study">
+                            <option value="">Select Field of Study</option>
+                            <option value="computer_science">Computer Science</option>
+                            <option value="electrical_engineering">Electrical Engineering</option>
+                            <option value="mechanical_engineering">Mechanical Engineering</option>
+                            <option value="biology">Biology</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="physics">Physics</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="environmental_science">Environmental Science</option>
+                            <option value="civil_engineering">Civil Engineering</option>
+                            <option value="chemical_engineering">Chemical Engineering</option>
+                            <option value="linguistics">Linguistics</option>
+                            <option value="psychology">Psychology</option>
+                            <option value="economics">Economics</option>
+                            <option value="business_administration">Business Administration</option>
+                            <option value="finance">Finance</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="history">History</option>
+                            <option value="art_history">Art History</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>School <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter School Name" id="inputSmall"></td>
+                </tr>
+            </table>
+            <h6>WORK PERMIT</h6>
+            
+            <table>
+                <tr>
+                    <td>Visa No. </td>
+                    <td><input class="form-control form-control-sm" type="number" placeholder="Enter Visa Number" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Work Permit No.</td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Work Permit Number" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Visa Expire Date</td>
+                    <td><input class="form-control form-control-sm" type="date" placeholder="Enter Visa Expiry Date" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Work Permit Expiration Date</td>
+                    <td><input class="form-control form-control-sm" type="date" placeholder="Enter Work Permit Expiry Date" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Work Permit</td>
+                    <td><input class="form-control w-100" type="file" id="formFile"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab32">
+            <h6>FAMILY STATUS</h6>
+            <table>
+                <tr>
+                    <td>Marital Status <span class="text-danger">*</span></td>
+                    <td>
+                        <select class="form-select form-select-sm" id="maritalStatus" name="marital_status">
+                            <option value="" disabled>-- Select Status --</option>
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="widowed">Widowed</option>
+                            <option value="separated">Separated</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>No. of Dependent Children <span class="text-danger">*</span></td>
+                    <td>
+                        <input type="number" class="form-control" name="number_of_dependents" min="0" value="0">
+                    </td>
+                </tr>
+            </table>
+            <h6>EMERGENCY</h6>
+            <table>
+                <tr>
+                    <td>Contact Name <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Emergency Contact Name" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Contact Phone <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Emergency Contact Number" id="inputSmall"></td>
+                </tr>
+            </table>
+            <h6>CITIZENSHIP</h6>
+            <table>
+                <tr>
+                    <td>Nationality (Country) <span class="text-danger">*</span></td>
+                    <td>
+                        <select class="form-select form-select-sm" name="citizenship" id="citizenship">
+                            <option value="">Select Citizenship</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="in">India</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Identification Type <span class="text-danger">*</span></td>
+                    <td>
+                        <select class="form-select form-select-sm" id="identification_type" name="identification_type">
+                            <option value="">Select Identification Type</option>
+                            <option value="passport">Passport</option>
+                            <option value="driver_license">Driver's License</option>
+                            <option value="national_id">National ID</option>
+                            <option value="social_security_number">Social Security Number</option>
+                            <option value="aadhar_card">Aadhar Card</option>
+                            <option value="pan_card">PAN Card</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Identification No. <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="number" placeholder="Enter Identification Number" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Passport No.</td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Passport Number" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Gender <span class="text-danger">*</span></td>
+                    <td><select class="form-select form-select-sm" name="gender" id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="date" placeholder="Enter Date of Birth" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Place of Birth <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Place of Birth" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Country of Birth</td>
+                    <td>
+                        <select class="form-select form-select-sm" name="country_of_birth" id="country_of_birth">
+                            <option value="">Select Country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="in">India</option>
+                            <option value="fr">France</option>
+                            <option value="de">Germany</option>
+                            <option value="jp">Japan</option>
+                            <option value="cn">China</option>
+                            <option value="br">Brazil</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Non-resident <span class="text-danger">*</span>
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="tab4" class="tab-content">
+    <div class="tab4">
+        <div class="tab41">
+            <h6>STATUS</h6>
+            <table>
+                <tr>
+                    <td>Employee Type
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm" name="employee_type" id="employee_type">
+                            <option value="">Select Employee Type</option>
+                            <option value="full_time">Full-Time</option>
+                            <option value="part_time">Part-Time</option>
+                            <option value="contract">Contract</option>
+                            <option value="intern">Intern</option>
+                            <option value="temporary">Temporary</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Related User
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Related User" id="inputSmall"></td>
+                </tr>
+            </table>
+            <h6>PAYROLL</h6>
+            <table>
+                <tr>
+                    <td>Registration Number of the Employee <span class="text-danger">*</span></td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Registration Number" id="inputSmall"></td>
+                </tr>
+            </table>
+            <h6>APPLICATION SETTINGS</h6>
+            <table>
+                <tr>
+                    <td>Hourly Cost</td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="₹0.00" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Fleet Mobility Card</td>
+                    <td><input class="form-control form-control-sm" type="text" placeholder="Enter Fleet Mobility Card Number" id="inputSmall"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab42">
+            <h6>ATTENDANCE/POINT OF SALE</h6>
+            <table>
+                <tr>
+                    <td>PIN code <span class="text-danger">*</span>
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td><input class="form-control form-control-sm" type="number" placeholder="Enter PIN Code" id="inputSmall"></td>
+                </tr>
+                <tr>
+                    <td>Badge ID
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td class="float-end text-info-emphasis"><strong>Generate Automatically</strong></td>
+                </tr>
+            </table>
+            <h6>PAYROLL</h6>
+            <table>
+                <tr>
+                    <td>Job Position <span class="text-danger">*</span></td>
+                    <td><select class="form-select form-select-sm" name="job_position" id="job_position">
+                        <option value="">Select Job Position</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="manager">Manager</option>
+                        <option value="analyst">Analyst</option>
+                        <option value="hr">HR</option>
+                        <option value="sales">Sales</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="support">Support</option>
+                    </select></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-success mx-2">Submit</button>
+        <button type="reset" class="btn btn-warning mx-2">Reset</button>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script>
+    function showTab(tabId) {
+        // Hide all tab content
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.classList.remove('show');
+        });
+
+        // Remove active class from all tabs
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Show the selected tab content
+        document.getElementById(tabId).classList.add('show');
+
+        // Set the clicked tab as active
+        event.currentTarget.classList.add('active');
+    }
+
+    $(document).ready(function () {
+        $('[data-bs-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+{% endblock %}

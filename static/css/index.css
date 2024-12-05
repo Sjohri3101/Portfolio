@@ -1,0 +1,263 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 65, 141, 0.142);
+}
+
+.tabs {
+    display: flex;
+    cursor: pointer;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+}
+
+.active {
+    /* background: #2ca67d; */
+    color: black;
+    border-bottom: 1px solid transparent;
+    border-top: 2px solid grey;
+}
+
+.tab-content {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.show {
+    display: block;
+}
+
+.basic_details {
+    width: 100%;
+    height: 350px;
+    /* background-color: gainsboro; */
+    padding: 20px;
+    margin-bottom: 10px;
+
+}
+
+.basic_details table {
+    width: 70%;
+    height: 150px;
+}
+
+.basic_details table tr td:nth-child(odd) {
+    font-weight: bold;
+}
+
+.personal_details {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.p1 {
+    width: 80%;
+    height: auto;
+}
+.p1 table {
+    width: 80%;
+    font-size: 30px;
+    color: grey;
+    margin-bottom: 10px;
+}
+.p1 table tr td:nth-child(odd){
+    width: 45%;
+    font-size: 30px;
+    color: grey;
+}
+.p1 table tr td:nth-child(even){
+    width: 55%;
+    font-size: 30px;
+    color: grey;
+    padding-left: 20px;
+}
+.p2 {
+    width: 20%;
+    height: auto;
+}
+.p3{
+    width: 100%;
+    height: auto;
+}
+.p3 table{
+    width: 100%;
+}
+.p3 table tr td:nth-child(odd){
+    width: 15%;
+}
+.p3 table tr td:nth-child(even){
+    width: 35%;
+}
+.tab1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.tab11,
+.tab12 {
+    width: 50%;
+}
+
+.tab11>h6,
+.tab12>h6 {
+    border-bottom: 1px solid rgb(194, 192, 192);
+    width: 90%;
+    font-weight: bold;
+}
+
+.tab11>button,
+.tab12>button {
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+}
+
+.tab2 {
+    width: 100%;
+}
+
+.tab2>h6 {
+    border-bottom: 1px solid rgb(194, 192, 192);
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tab2 table {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    background-color: rgba(65, 255, 217, 0.142);
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px grey;
+}
+
+.tab2 table tr td:nth-child(odd) {
+    font-weight: bold;
+    width: 50%;
+    padding: 10px;
+}
+
+.tab2 table tr td:nth-child(even) {
+    width: 50%;
+    padding: 10px;
+}
+
+.tab3 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.tab31,
+.tab32 {
+    width: 50%;
+}
+
+.tab31>h6,
+.tab32>h6 {
+    border-bottom: 1px solid rgb(194, 192, 192);
+    width: 90%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tab31 table,
+.tab32 table {
+    width: 90%;
+    height: auto;
+    margin-bottom: 50px;
+    background-color: rgba(65, 255, 217, 0.142);
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px grey;
+}
+
+.tab31 table tr td:nth-child(odd) {
+    font-weight: bold;
+    width: 30%;
+    padding: 10px;
+}
+
+.tab31 table tr td:nth-child(even) {
+    width: 70%;
+    padding: 10px;
+}
+
+.tab32 table tr td:nth-child(odd) {
+    font-weight: bold;
+    width: 30%;
+    padding: 10px;
+}
+
+.tab32 table tr td:nth-child(even) {
+    width: 70%;
+    padding: 10px;
+}
+
+.tab4 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.tab41,
+.tab42 {
+    width: 50%;
+}
+
+.tab41>h6,
+.tab42>h6 {
+    border-bottom: 1px solid rgb(194, 192, 192);
+    width: 90%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.tab41 table,
+.tab42 table {
+    width: 90%;
+    height: auto;
+    margin-bottom: 50px;
+    background-color: rgba(65, 255, 217, 0.142);
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px grey;
+}
+
+.tab41 table tr td:nth-child(odd) {
+    font-weight: bold;
+    width: 30%;
+    padding: 10px;
+}
+
+.tab41 table tr td:nth-child(even) {
+    width: 70%;
+    padding: 10px;
+}
+
+.tab42 table tr td:nth-child(odd) {
+    font-weight: bold;
+    width: 30%;
+    padding: 10px;
+}
+
+.tab42 table tr td:nth-child(even) {
+    width: 70%;
+    padding: 10px;
+}
+
+.tooltipbtn {
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    font-size: 10px;
+}

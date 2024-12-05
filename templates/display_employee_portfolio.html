@@ -1,0 +1,449 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}PORTFOLIO{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/create_portfolio.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="p-3 text-warning-emphasis bg-primary-subtle border border-primary-subtle rounded-3 fs-1">
+    EMPLOYEE PORTFOLIO
+</div>
+<section class="basic_details">
+    <div class="personal_details">
+        <div class="p1">
+            <table>
+                <tr>
+                    <td>Employee's Name</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Job Position</td>
+                    <td>--</td>
+                </tr>
+            </table>
+        </div>
+        <div class="p2">
+            <img src="{% static 'img/profile_image.png' %}" alt="" width="150px" height="150px">
+        </div>
+        <div class="p3">
+            <form action="">
+                <table>
+                    <tr>
+                        <td>Work Mobile</td>
+                        <td>--</td>
+                        <td>Department</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Work Phone</td>
+                        <td>--</td>
+                        <td>Job Position</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td>Work Email</td>
+                        <td>--</td>
+                        <td>Manager</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Coach
+                            <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-title="This top tooltip is themed via CSS variables.">
+                                ?
+                            </button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="tabs">
+    <div class="tab active" onclick="showTab('tab1')">Resume</div>
+    <div class="tab" onclick="showTab('tab2')">Work Information</div>
+    <div class="tab" onclick="showTab('tab3')">Private Information</div>
+    <div class="tab" onclick="showTab('tab4')">HR Settings</div>
+</div>
+
+<div id="tab1" class="tab-content show">
+    <div class="tab1">
+        <div class="tab11">
+            <h6>Resume</h6>
+            <button type="button" class="btn btn-secondary">Create a new entry</button>
+        </div>
+        <div class="tab12">
+            <h6>Skills</h6>
+            <button type="button" class="btn btn-secondary">Create a new entry</button>
+        </div>
+    </div>
+</div>
+<div id="tab2" class="tab-content">
+    <div class="tab2">
+        <h6>LOCATION</h6>
+        <table>
+            <tr>
+                <td>Work Address</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>Work Location</td>
+                <td>--</td>
+            </tr>
+        </table>
+        <h6>APPROVERS</h6>
+        <table>
+            <tr>
+                <td>Expense
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>Time Off
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td>--</td>
+            </tr>
+        </table>
+        <h6>SCHEDULE</h6>
+        <table>
+            <tr>
+                <td>Working Hours</td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>Timezone
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td>--</td>
+            </tr>
+        </table>
+        <h6>PLANNING</h6>
+        <table>
+            <tr>
+                <td>Roles
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td>--</td>
+            </tr>
+            <tr>
+                <td>Default Role
+                    <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="This top tooltip is themed via CSS variables.">
+                        ?
+                    </button>
+                </td>
+                <td>--</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="tab3" class="tab-content">
+    <div class="tab3">
+        <div class="tab31">
+            <h6>PRIVATE CONTACT</h6>
+            <table>
+                <tr>
+                    <td>Address
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Language
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Home-Work Distance</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Private Car Plate
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>EDUCATION</h6>
+            <table>
+                <tr>
+                    <td>Certificate Level</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Field of Study</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>School</td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>WORK PERMIT</h6>
+            <table>
+                <tr>
+                    <td>Working Hours</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Timezone</td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>PLANNING</h6>
+            <table>
+                <tr>
+                    <td>Visa No.</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Work Permit No.</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Visa Expire Date</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Work Permit Expiration Date</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Work Permit</td>
+                    <td><input class="form-control w-50" type="file" id="formFile"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab32">
+            <h6>FAMILY STATUS</h6>
+            <table>
+                <tr>
+                    <td>Marital Status</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>No. of Dependent Children</td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>EMERGENCY</h6>
+            <table>
+                <tr>
+                    <td>Contact Name</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Contact Phone</td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>CITIZENSHIP</h6>
+            <table>
+                <tr>
+                    <td>Nationality (Country)</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Identification No.</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Passport No.</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Place of Birth</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Country of Birth</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Non-resident
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="tab4" class="tab-content">
+    <div class="tab4">
+        <div class="tab41">
+            <h6>STATUS</h6>
+            <table>
+                <tr>
+                    <td>Employee Type
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Related User
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>PAYROLL</h6>
+            <table>
+                <tr>
+                    <td>Registration Number of the Employee</td>
+                    <td>--</td>
+                </tr>
+            </table>
+            <h6>APPLICATION SETTINGS</h6>
+            <table>
+                <tr>
+                    <td>Hourly Cost</td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Fleet Mobility Card</td>
+                    <td>--</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab42">
+            <h6>ATTENDANCE/POINT OF SALE</h6>
+            <table>
+                <tr>
+                    <td>PIN code
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td>--</td>
+                </tr>
+                <tr>
+                    <td>Badge ID
+                        <button type="button" class="btn btn-sm btn-outline-primary rounded-circle tooltipbtn"
+                            data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="This top tooltip is themed via CSS variables.">
+                            ?
+                        </button>
+                    </td>
+                    <td class="float-end text-info-emphasis"><strong>Generate</strong></td>
+                </tr>
+            </table>
+            <h6>PAYROLL</h6>
+            <table>
+                <tr>
+                    <td>Job Position</td>
+                    <td>--</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block scripts %}
+
+<script>
+    function showTab(tabId) {
+        // Hide all tab content
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.classList.remove('show');
+        });
+
+        // Remove active class from all tabs
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Show the selected tab content
+        document.getElementById(tabId).classList.add('show');
+
+        // Set the clicked tab as active
+        event.currentTarget.classList.add('active');
+    }
+
+    $(document).ready(function () {
+        $('[data-bs-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+{% endblock %}
